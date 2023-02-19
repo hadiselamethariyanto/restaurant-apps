@@ -23,23 +23,31 @@ const app = new App({
 //   drawer.classList.remove('open');
 // });
 
+window.addEventListener('hashchange', () => {
+  app.renderPage();
+});
 
-const getRestaurants = async () => {
-  try {
-    const result = data;
-    showRestaurants(result.restaurants);
-  } catch (message) {
-    fallbackResult(message);
-  }
-};
+window.addEventListener('load', () => {
+  app.renderPage();
+});
 
-const showRestaurants = (restaurants) => {
-  restaurantListElement.restaurants = restaurants;
-};
 
-const fallbackResult = (message) => {
-  restaurantListElement.renderError(message);
-};
+// const getRestaurants = async () => {
+//   try {
+//     const result = data;
+//     showRestaurants(result.restaurants);
+//   } catch (message) {
+//     fallbackResult(message);
+//   }
+// };
 
-getRestaurants();
+// const showRestaurants = (restaurants) => {
+//   restaurantListElement.restaurants = restaurants;
+// };
+
+// const fallbackResult = (message) => {
+//   restaurantListElement.renderError(message);
+// };
+
+// getRestaurants();
 
