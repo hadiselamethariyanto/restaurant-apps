@@ -3,6 +3,7 @@ import '../styles/main.css';
 import '../styles/responsive.css';
 import './component/restaurant-list';
 import './component/my-footer';
+import App from './views/app';
 
 const data = require('../DATA.json');
 const menu = document.querySelector('#menu');
@@ -12,18 +13,16 @@ const drawer = document.querySelector('#drawer');
 const restaurantListElement = document.querySelector('restaurant-list');
 
 
-menu.addEventListener('click', function(event) {
-  drawer.classList.toggle('open');
-  event.stopPropagation();
+const app = new App({
+  button: menu,
+  drawer: drawer,
+  content: main,
 });
 
-hero.addEventListener('click', function() {
-  drawer.classList.remove('open');
-});
+// hero.addEventListener('click', function() {
+//   drawer.classList.remove('open');
+// });
 
-main.addEventListener('click', function() {
-  drawer.classList.remove('open');
-});
 
 const getRestaurants = async () => {
   try {
