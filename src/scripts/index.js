@@ -4,14 +4,12 @@ import '../styles/responsive.css';
 import './component/restaurant-list';
 import './component/my-footer';
 import App from './views/app';
+import swRegister from './utils/sw-register';
 
-const data = require('../DATA.json');
 const menu = document.querySelector('#menu');
-const hero = document.querySelector('.hero');
+// const hero = document.querySelector('.hero');
 const main = document.querySelector('main');
 const drawer = document.querySelector('#drawer');
-const restaurantListElement = document.querySelector('restaurant-list');
-
 
 const app = new App({
   button: menu,
@@ -29,25 +27,5 @@ window.addEventListener('hashchange', () => {
 
 window.addEventListener('load', () => {
   app.renderPage();
+  swRegister();
 });
-
-
-// const getRestaurants = async () => {
-//   try {
-//     const result = data;
-//     showRestaurants(result.restaurants);
-//   } catch (message) {
-//     fallbackResult(message);
-//   }
-// };
-
-// const showRestaurants = (restaurants) => {
-//   restaurantListElement.restaurants = restaurants;
-// };
-
-// const fallbackResult = (message) => {
-//   restaurantListElement.renderError(message);
-// };
-
-// getRestaurants();
-
