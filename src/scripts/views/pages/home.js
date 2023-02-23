@@ -1,3 +1,5 @@
+import DataSource from '../../data/data-source';
+
 const Home = {
   async render() {
     return `<section class="content">
@@ -8,13 +10,12 @@ const Home = {
   },
 
   async afterRender() {
-    const data = require('../../../DATA.json');
     const restaurantListElement = document.querySelector('restaurant-list');
 
     const getRestaurants = async () => {
       try {
-        const result = data;
-        showRestaurants(result.restaurants);
+        const result = await DataSource.getRestaurants();
+        showRestaurants(result);
       } catch (message) {
         fallbackResult(message);
       }
