@@ -179,3 +179,97 @@ main {
   display: block;
   border-bottom: 1px solid #eeeeee;
 }
+
+/* 
+ detail
+ */
+
+ .detail {
+  width: 100%;
+  margin: 60px auto;
+  text-align: start;
+}
+
+.resto__container{
+  display: flex;
+  align-items: flex-start;
+}
+
+.resto__container img{
+  border-radius: 1rem;
+  width: 130px;
+  height: 130px;
+}
+
+.resto__info{
+  display: flex;
+  flex-direction: column;
+  justify-content:  space-evenly;
+  margin-left: 16px;
+}
+
+.resto__info h2{
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 2rem;
+  margin: 0;
+}
+
+.resto__info p, span{
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.563rem;
+  margin: .25rem;
+}
+
+.resto__description{
+  margin: 2rem 0;
+}
+
+.resto__description p{
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.563rem;
+  margin: .25rem;
+}
+
+.fa-star {
+  color: orange;
+}
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}

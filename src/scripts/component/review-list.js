@@ -1,12 +1,12 @@
-import './restaurant-item.js';
+import './review-item.js';
 
-class RestaurantList extends HTMLElement {
+class ReviewList extends HTMLElement {
   constructor() {
     super();
     this.shadowDOM = this.attachShadow({mode: 'open'});
   }
-  set restaurants(restaurants) {
-    this._restaurants = restaurants;
+  set reviews(reviews) {
+    this._reviews = reviews;
     this.render();
   }
   render() {
@@ -40,10 +40,10 @@ class RestaurantList extends HTMLElement {
             }
           }
       </style>`;
-    this._restaurants.forEach((restaurant) => {
-      const restaurantItemElement = document.createElement('restaurant-item');
-      restaurantItemElement.restaurant = restaurant;
-      this.shadowDOM.appendChild(restaurantItemElement);
+    this._reviews.forEach((review) => {
+      const reviewItemElement = document.createElement('review-item');
+      reviewItemElement.review = review;
+      this.shadowDOM.appendChild(reviewItemElement);
     });
   }
 
@@ -66,4 +66,4 @@ class RestaurantList extends HTMLElement {
   }
 }
 
-customElements.define('restaurant-list', RestaurantList);
+customElements.define('review-list', ReviewList);

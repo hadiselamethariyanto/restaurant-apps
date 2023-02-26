@@ -1,12 +1,12 @@
-import './restaurant-item.js';
+import './menu-item.js';
 
-class RestaurantList extends HTMLElement {
+class MenuList extends HTMLElement {
   constructor() {
     super();
     this.shadowDOM = this.attachShadow({mode: 'open'});
   }
-  set restaurants(restaurants) {
-    this._restaurants = restaurants;
+  set menus(menus) {
+    this._menus = menus;
     this.render();
   }
   render() {
@@ -40,10 +40,10 @@ class RestaurantList extends HTMLElement {
             }
           }
       </style>`;
-    this._restaurants.forEach((restaurant) => {
-      const restaurantItemElement = document.createElement('restaurant-item');
-      restaurantItemElement.restaurant = restaurant;
-      this.shadowDOM.appendChild(restaurantItemElement);
+    this._menus.forEach((menu) => {
+      const menuItemElement = document.createElement('menu-item');
+      menuItemElement.menu = menu;
+      this.shadowDOM.appendChild(menuItemElement);
     });
   }
 
@@ -66,4 +66,4 @@ class RestaurantList extends HTMLElement {
   }
 }
 
-customElements.define('restaurant-list', RestaurantList);
+customElements.define('menu-list', MenuList);
